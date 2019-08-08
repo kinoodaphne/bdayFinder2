@@ -1,17 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const messageSchema = new Schema({
-    username: {
-        type: String,
-        required: true
-    },
-    text: {
-        type: String,
-        required: true
-    },
-    postDate: Date
-})
-const Message = mongoose.model('Messages', messageSchema);
+const Message = require('../../../models/Message');
 
 const getAll = (req, res) => {
     Message.find({
@@ -28,12 +15,18 @@ const getAll = (req, res) => {
     });
 };
 
-const create = (req, res) => {
+const create = (req, res, next) => {
     let message = new Message();
-    message.username = "dabenie";
+    message.username = "psychoAlpaca";
     message.text = "Hello there";
     message.postDate = "2019-08-08";
     message.save((err, doc) => {
+        if (err) {
+            res.json({
+                "status": "failed",
+                "message": "could not post this message"
+            });
+        };
         if (!err) {
             res.json({
                 "status": "success",
