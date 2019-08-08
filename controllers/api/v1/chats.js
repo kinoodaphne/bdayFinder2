@@ -17,9 +17,9 @@ const getAll = (req, res) => {
 
 const create = (req, res, next) => {
     let message = new Message();
-    message.username = "psychoAlpaca";
-    message.text = "Hello there";
-    message.postDate = "2019-08-08";
+    message.username = req.body.username;
+    message.text = req.body.text;
+    message.postDate = req.body.postDate;
     message.save((err, doc) => {
         if (err) {
             res.json({
