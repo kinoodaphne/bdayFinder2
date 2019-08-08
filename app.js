@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const apiChatRouter = require('./routes/api/v1/chat');
 
 const mongoose = require('mongoose');
+mongoose.set('useCreateIndex', true);
 mongoose.connect('mongodb://localhost:27017/bdayFinder2', {useNewUrlParser: true});
 
 const app = express();
