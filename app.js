@@ -6,7 +6,10 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const apiChatRouter = require('./routes/api/v1/chats');
+const apiChatRouter = require('./routes/api/v1/chat');
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/bdayFinder2', {useNewUrlParser: true});
 
 const app = express();
 
@@ -22,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/v1/chats', apiChatRouter);
+app.use('/api/v1/chat', apiChatRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
