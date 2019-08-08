@@ -15,9 +15,14 @@ html {
 body {
     margin: 0;
     font-family: $main-font;
-    background-image: url("../../images/bike1.jpg");
+    // background-image: url("../../images/bike1.jpg");
+    background-color: $bg-color;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 strong {
@@ -41,6 +46,15 @@ button, input {
 
 button {
     text-transform: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 90vh 10vh;
+}
+
+.hidden {
+    display: none;
 }
 
 /* MESSAGES */
@@ -162,29 +176,32 @@ button {
 }
 
 .userProfile__username {
+    font-size: 0.8em;
+}
+
+.userProfile__picture img {
     max-width: 100%;
     border-radius: 50%;
     width: 30px;
     height: 30px;
     display: grid;
-    align-itemsn: center;
+    align-items: center;
 }
 
 /* LOGIN */
 .box {
-    background-color: $bg-color;
+    background-color: $secondary-color;
     width: 600px;
     margin: 4em auto;
     border-radius: 5px;
+    color: $black;
 
     h1 {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        background-color: $bg-color;
         padding: 1em;
         font-size: 1.4em;
         text-transform: uppercase;
-        color: $white;
         text-align: center;
     }
 }
@@ -197,10 +214,6 @@ button {
     text-align: center;
 }
 
-.hidden {
-    display: none;
-}
-
 .form-group {
     padding: 1em;
 }
@@ -210,7 +223,6 @@ label {
     margin: 0.5em 0;
     font-size: 1.2em;
     display: block;
-    color: $white;
 }
 
 input[type=email], input[type=password] {
