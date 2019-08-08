@@ -157,37 +157,6 @@ button {
     display: inline-block;
 }
 
-
-/* USERPROFILE */
-.userProfile {
-    position: fixed;
-    right: 2em;
-    top: 1em;
-    display: grid;
-    grid-template-columns: 30px auto;
-    background-color: $black;
-    color: $white;
-    border-radius: 1em;
-    align-content: center;
-    align-items: center;
-    padding: 0.2em 0.5em;
-    cursor: pointer;
-    z-index: 9999;
-}
-
-.userProfile__username {
-    font-size: 0.8em;
-}
-
-.userProfile__picture img {
-    max-width: 100%;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: grid;
-    align-items: center;
-}
-
 /* LOGIN */
 .box {
     background-color: $secondary-color;
