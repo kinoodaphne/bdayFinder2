@@ -40,8 +40,6 @@ function doBrowserSync() {
     });
 }
 
-function watchSass() {
-    return watch("./public/stylesheets/sass/*.scss", parallel(sass2css));
-}
+watch("./public/stylesheets/scss/*.scss", parallel(sass2css));
 
-module.exports.default = parallel(sass2css, watchSass);
+module.exports.default = parallel(sass2css);
