@@ -19,6 +19,7 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
     "nodemon": "^1.19.1"
   }
 }
