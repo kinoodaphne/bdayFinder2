@@ -33,14 +33,17 @@ img {
     border-style: none;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
     font-family: inherit;
     font-size: 100%;
     line-height: 1.15;
     margin: 0;
 }
 
-button, input {
+button,
+input {
     overflow: visible;
 }
 
@@ -194,7 +197,8 @@ label {
     display: block;
 }
 
-input[type=text], input[type=password] {
+input[type=text],
+input[type=password] {
     width: 100%;
     padding: 0.5em;
     font-size: 1.2em;
@@ -226,4 +230,25 @@ button:hover {
         border-radius: 5px;
         margin: 0.5em auto;
     }
+}
+
+/* LOG OUT */
+.logOut {
+    position: fixed;
+    right: 2em;
+    top: 1em;
+    display: grid;
+    grid-template-columns: 70px auto;
+    background-color: rgba(1, 1, 1, 0.8);
+    border-radius: 1em;
+    align-content: center;
+    align-items: center;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    z-index: 9999
+}
+
+.option__logout {
+    color: white;
+    text-decoration: none;
 }
