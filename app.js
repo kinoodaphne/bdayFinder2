@@ -41,7 +41,7 @@ passport.use(new FacebookStrategy({
   clientID: FACEBOOK_APP_ID,
   clientSecret: FACEBOOK_APP_SECRET,
   callbackURL: "http://localhost:3000/auth/facebook/callback",
-  profileFields: ['email']
+  profileFields: ['user_birthday']
 },
 function(accessToken, refreshToken, profile, cb) {
   console.log(accessToken, refreshToken, profile, cb);
@@ -51,7 +51,7 @@ function(accessToken, refreshToken, profile, cb) {
 }));
 
 /* Checking if it redirects to facebook for authentication */
-app.route('/facebook').get(passport.authenticate('facebook', { scope: ['email'] }));
+app.route('/facebook').get(passport.authenticate('facebook', { scope: ['user_birthday'] }));
 
 app.route('/auth/facebook/callback')
 .get(passport.authenticate('facebook', (err, user, info) => {
