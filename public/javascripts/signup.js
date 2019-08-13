@@ -21,7 +21,7 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
 
              let token = json.data.token;
             localStorage.setItem("token", token);
-            window.location.href = "/users/login";
+            window.location.href = "http://localhost:3000";
         }
     })
 }); 
