@@ -1,19 +1,24 @@
 extends layout
 
 block content
-    .grid
-      section.messages-container
-        ul.messages
-          li.message
-            .message__userAvatar
-              img.message__userAvatarImage(src='images/pig.jpg', alt='username')
-            .message__details
-              .message__user
-                strong.message__userName Username
-                span.message__date 12-05-2019
-              .message__text
-                p textmessage
-          
-      section.messages-form
-        input.message__input(type='text', autofocus='', placeholder='Enter text here')
-        button#submit Submit
+  .logOut
+      a.option.option__logout(href='#') Log out
+
+  .grid
+    section.messages-container
+      ul.messages
+        li.message
+          .message__userAvatar
+            img.message__userAvatarImage(src='images/pig.jpg', alt='username')
+          .message__details
+            .message__user
+              strong.message__userName Username
+              span.message__date 12-05-2019
+            .message__text
+              p textmessage
+
+    section.messages-form
+      input.message__input(type='text', autofocus='', placeholder='Enter text here')
+      button#submit Submit
+      
+  script(src="../javascripts/app.js")
