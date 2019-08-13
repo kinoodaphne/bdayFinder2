@@ -42,6 +42,7 @@
 [0809/175711.586:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0809/181211.587:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0809/182711.587:ERROR:crash_report_database_win.cc(428)] unexpected header
+<<<<<<< HEAD
 [0809/184751.569:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0809/192447.616:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0809/193947.617:ERROR:crash_report_database_win.cc(428)] unexpected header
@@ -55,3 +56,5 @@
 [0809/223924.686:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0809/225424.686:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0809/230924.687:ERROR:crash_report_database_win.cc(428)] unexpected header
+=======
+>>>>>>> parent of 8f0fee2... Added logout functionality
