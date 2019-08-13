@@ -19,7 +19,7 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
             feedback.textContent = "Sign up complete!";
             feedback.classList.remove('hidden');
 
-             let token = json.data.token;
+            let token = json.data.token;
             localStorage.setItem("token", token);
             window.location.href = "http://localhost:3000";
         }
