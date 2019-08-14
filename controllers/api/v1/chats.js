@@ -33,7 +33,7 @@ const create = (req, res, next) => {
                 "status": "success",
                 "data": {
                     "message": {
-                        "text": doc
+                        "text": message.text
                     }
                 }
             });
