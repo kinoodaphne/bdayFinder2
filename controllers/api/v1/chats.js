@@ -2,7 +2,7 @@ const Message = require('../../../models/Message');
 
 const getAll = (req, res) => {
     Message.find({
-        "username": "dabenie"
+        "username": req.user._id
     }, (err, docs) => {
         if (!err) {
             res.json({
@@ -18,7 +18,8 @@ const getAll = (req, res) => {
 const create = (req, res, next) => {
     let message = new Message();
     message.text = req.body.text;
-    message.user = req.body.user;
+    console.log(req.user);
+    message.username = req.user._id;
 
     message.save((err, doc) => {
         if (err) {
@@ -32,9 +33,7 @@ const create = (req, res, next) => {
             res.json({
                 "status": "success",
                 "data": {
-                    "message": {
-                        "text": message.text
-                    }
+                    "message": doc
                 }
             });
         }

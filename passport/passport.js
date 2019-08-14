@@ -14,8 +14,10 @@ var JwtStrategy = require('passport-jwt').Strategy,
 var opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = 'MyVerySecretWord';
-passport.use(new JwtStrategy(opts, function(jwt_payload, done) {
-    User.findOne({_id: jwt_payload.uid}, function(err, user) {
+passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
+    User.findOne({
+        _id: jwt_payload.uid
+    }, function (err, user) {
         if (err) {
             return done(err, false);
         }
