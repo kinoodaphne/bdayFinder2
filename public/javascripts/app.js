@@ -31,6 +31,9 @@ input.addEventListener("keyup", e=> {
         .then(result => {
             return result.json();
         }).then(json => {
+            input.value = "";
+            input.focus();
+
             console.log(json);
             let message = `<div class="message"><div class="message__userAvatar"><img class="message__userAvatarImage" src="images/pig.jpg" alt="username"></div><div class="message__details"><div class="message__user"><strong class="message__userName">Username</strong><span class="message__date">12-05-2019</span></div><div class="message__text"><p>${json.data.message.text}</p></div></div></div>`;
             document.querySelector(".messages").insertAdjacentHTML('afterend', message);
@@ -38,6 +41,7 @@ input.addEventListener("keyup", e=> {
             console.log(err);
         })
     }
+
     e.preventDefault();
 });
 

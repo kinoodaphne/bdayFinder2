@@ -6,6 +6,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const passport = require('./passport/passport');
 const FacebookStrategy = require('passport-facebook');
+const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
