@@ -17,11 +17,12 @@ const getAll = (req, res) => {
 
 const create = (req, res, next) => {
     let message = new Message();
-    message.username = req.body.username;
     message.text = req.body.text;
-    message.postDate = req.body.postDate;
+    message.user = req.body.user;
+
     message.save((err, doc) => {
         if (err) {
+            console.log(err);
             res.json({
                 "status": "failed",
                 "message": "could not post this message"
