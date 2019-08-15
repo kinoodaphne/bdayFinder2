@@ -7,6 +7,8 @@ const cors = require('cors');
 const passport = require('./passport/passport');
 const FacebookStrategy = require('passport-facebook');
 const bodyParser = require('body-parser');
+const config = require('config');
+
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -14,7 +16,7 @@ const apiChatRouter = require('./routes/api/v1/chat');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://localhost:27017/bdayFinderV2', {useNewUrlParser: true});
+mongoose.connect(config.get('Database.conn'), {useNewUrlParser: true});
 
 const app = express();
 
