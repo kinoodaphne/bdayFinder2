@@ -16,7 +16,7 @@ const apiChatRouter = require('./routes/api/v1/chat');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
-mongoose.connect(process.env.dvconn || config.get('Database.conn'), {useNewUrlParser: true});
+mongoose.connect(config.get('Database.conn'), {useNewUrlParser: true});
 
 const app = express();
 
