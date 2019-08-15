@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .box
+    h1 Create account
+    form(action='', method='post')
+      .feedback.hidden
+        | Oh boy, that didn't go well.
+      .form-group
+        label(for='email') Email address
+        input#email(type='text' name='email')
+      .form-group
+        label(for='password') Password
+        input#password(type='password' name='password')
+      .form-group
+        button#submit(type='submit' class='btn_submit') Register
+  .actions
+    a(href='login')
+      button Already an account? Log in
+
+  script(src="../javascripts/signup.js")

@@ -1,0 +1,250 @@
+@import "modules/variables";
+@import "modules/btn";
+@import "modules/input";
+@import "modules/login";
+@import "modules/signup";
+@import "modules/messages";
+
+/* GENERAL */
+html {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: $main-font;
+    // background-image: url("../../images/bike1.jpg");
+    background-color: $bg-color;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+img {
+    border-style: none;
+}
+
+button, input, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button, input {
+    overflow: visible;
+}
+
+button {
+    text-transform: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 90vh 10vh;
+}
+
+.hidden {
+    display: none;
+}
+
+/* MESSAGES */
+
+.messages-form {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+
+    input {
+        background-color: $white;
+        border: 0;
+        color: $bg-color;
+        padding: 0.2em 0.5em;
+        outline: none;
+        width: 95%;
+        margin: 1em 0em 1em 0.5em;
+        border-radius: 15px;
+    }
+
+    input::placeholder {
+        color: $bg-color;
+    }
+
+    button {
+        background-color: $purple;
+        border: 0;
+        border-radius: 15px;
+        font-weight: bold;
+        margin: 1em 0.5em 1em 0em;
+    }
+
+    button:hover {
+        transform: none;
+    }
+}
+
+.messages-container {
+    overflow: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    padding-left: 1em;
+}
+
+.message {
+    font-size: 0.9em;
+    margin: 0.5em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: center;
+    grid-gap: 0.5em;
+    margin: 0.5em auto;
+}
+
+.message__details {
+    border-left: 3px solid $purple;
+}
+
+.message__userAvatarImage {
+    border-radius: 0.2em;
+    width: 40px;
+    height: 40px;
+}
+
+.message__user {
+    color: $purple;
+    font-size: 1em;
+    padding: 0.2em;
+    display: inline-block;
+}
+
+.message__userName {
+    font-weight: normal;
+    padding-left: 0.5em;
+}
+
+.message__date {
+    opacity: 0.5;
+    font-size: 0.9em;
+}
+
+.message__text {
+    padding: 0.5em;
+
+    p {
+        padding: 0.2em;
+        border-radius: 0.2em;
+        margin: 0;
+        color: $white;
+    }
+}
+
+.message__image {
+    width: 320px;
+    max-width: 100%;
+    display: inline-block;
+}
+
+/* LOGIN */
+.box {
+    background-color: $secondary-color;
+    width: 600px;
+    margin: 4em auto;
+    border-radius: 5px;
+    color: $black;
+
+    h1 {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 1em;
+        font-size: 1.4em;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+.feedback {
+    font-size: 1.2em;
+    padding: 1em;
+    color: $danger;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group {
+    padding: 1em;
+}
+
+label {
+    font-weight: bold;
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    display: block;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    padding: 1em;
+    background: $purple;
+    color: $white;
+    border: none;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    background-color: $pink;
+}
+
+.actions {
+    width: 600px;
+    margin: 2em auto;
+
+    button {
+        border-radius: 5px;
+        margin: 0.5em auto;
+    }
+}
+
+/* LOG OUT */
+.logOut {
+    position: fixed;
+    right: 2em;
+    top: 1em;
+    display: grid;
+    grid-template-columns: 70px auto;
+    background-color: rgba(1, 1, 1, 0.8);
+    border-radius: 1em;
+    align-content: center;
+    align-items: center;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    z-index: 9999
+}
+
+.option__logout {
+    color: white;
+    text-decoration: none;
+}
