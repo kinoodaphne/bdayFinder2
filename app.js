@@ -7,7 +7,7 @@ const cors = require('cors');
 const passport = require('./passport/passport');
 const FacebookStrategy = require('passport-facebook');
 const bodyParser = require('body-parser');
-const config = require('config');
+const Config = require('config');
 
 
 const indexRouter = require('./routes/index');
@@ -16,8 +16,7 @@ const apiChatRouter = require('./routes/api/v1/chat');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
-// mongoose.connect(config.get('Database.conn'), {useNewUrlParser: true});
-mongoose.connect("mongodb+srv://chatnodejs:n89ooHpjwEA0sTDF@bdayfinderv2-d1gpz.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect(Config.get('Database.conn'), {useNewUrlParser: true});
 
 const app = express();
 
