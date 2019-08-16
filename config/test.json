@@ -1,0 +1,8 @@
+{
+    "Database": {
+        "conn": "mongodb+srv://chatnodejs:n89ooHpjwEA0sTDF@bdayfinderv2-d1gpz.mongodb.net/test?retryWrites=true&w=majority"
+    },
+    "jwt": {
+        "secret": "MyVerySecretWord"
+    }
+}
