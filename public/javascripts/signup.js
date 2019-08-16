@@ -2,7 +2,7 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
     let username = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
 
-     fetch('http://localhost:3000/users/signup', {
+     fetch('/users/signup', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
 
             let token = json.data.token;
             localStorage.setItem("token", token);
-            window.location.href = "http://localhost:3000";
+            window.location.href = "/";
         }
     })
 }); 

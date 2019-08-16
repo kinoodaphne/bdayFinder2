@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/api/v1/chat", {
+fetch("/api/v1/chat", {
     'headers': {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
     }
@@ -18,7 +18,7 @@ input.addEventListener("keyup", e=> {
     if (e.keyCode === 13) {
         //on keystroke Enter
         let text = input.value;
-        fetch('http://localhost:3000/api/v1/chat', {
+        fetch('/api/v1/chat', {
             method: "post",
             'headers': {
                 'Content-Type': 'application/json',
