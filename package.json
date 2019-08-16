@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/nodemon ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -31,5 +31,17 @@
     "gulp-nodemon": "^2.4.2",
     "gulp-sass": "^4.0.2",
     "nodemon": "^1.19.1"
-  }
+  },
+  "description": "Started working on the app bdayFinder in a first version. Turned out that this had so much bugs in it that it was better to start from scratch.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kinoodaphne/bdayFinder2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinoodaphne/bdayFinder2/issues"
+  },
+  "homepage": "https://github.com/kinoodaphne/bdayFinder2#readme"
 }
