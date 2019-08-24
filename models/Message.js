@@ -7,7 +7,11 @@ const messageSchema = new Schema({
     text: {
         type: String,
         required: true
-    }
+    },
+    user_id: {
+        type: String
+      },
+      timestamp: Number
 })
 const Message = mongoose.model('Messages', messageSchema);
 
