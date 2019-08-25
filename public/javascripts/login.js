@@ -24,4 +24,6 @@ var btnLogin = document.querySelector("#submit").addEventListener("click", (e) =
             feedback.classList.remove('hidden');
         }
     })
+
+    e.preventDefault();
 }); 
