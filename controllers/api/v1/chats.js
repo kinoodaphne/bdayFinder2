@@ -1,9 +1,7 @@
 const Message = require('../../../models/Message');
 
 const getAll = (req, res) => {
-    Message.find({
-        "username": req.user._id
-    }, (err, docs) => {
+    Message.find({}, (err, docs) => {
         if (!err) {
             res.json({
                 "status": "success",
@@ -14,6 +12,25 @@ const getAll = (req, res) => {
         }
     });
 };
+
+let getId = (req, res, next) => {
+    Message.find({
+        "username": req.user.username
+    }, (err, docs) => {
+        if( err){
+            res.json({
+                "status": "error",
+                "message": err.message
+            });
+        }
+        if(!err){
+            res.json({
+                "status": "success",
+                "data": docs
+            })
+        }
+    });
+}
 
 const create = (req, res, next) => {
     let message = new Message();
@@ -41,4 +58,5 @@ const create = (req, res, next) => {
 };
 
 module.exports.getAll = getAll;
+module.exports.getId = getId;
 module.exports.create = create;
