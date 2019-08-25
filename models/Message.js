@@ -10,9 +10,9 @@ const messageSchema = new Schema({
     },
     user_id: {
         type: String
-      },
-      timestamp: Number
+    }
 })
+
 const Message = mongoose.model('Messages', messageSchema);
 
 

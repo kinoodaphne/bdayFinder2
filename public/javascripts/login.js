@@ -20,7 +20,7 @@ var btnLogin = document.querySelector("#submit").addEventListener("click", (e) =
             window.location.href = "/";
         } else {
             let feedback = document.querySelector(".feedback");
-            feedback.textContent = "Login failed buddy.";
+            feedback.textContent = "Username or password is incorrect.";
             feedback.classList.remove('hidden');
         }
     })
