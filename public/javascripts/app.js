@@ -1,5 +1,7 @@
 // PRIMUS LIVE
-primus = Primus.connect("bday-finder-2.herokuapp.com", {
+const base_url = "https://bday-finder-2.herokuapp.com";
+
+primus = Primus.connect(base_url, {
     reconnect: {
         max: Infinity // Number: The max delay before we try to reconnect.
             ,
