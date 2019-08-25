@@ -34,7 +34,7 @@ input.addEventListener("keyup", e=> {
             input.value = "";
             input.focus();
 
-            let message = `<div class="message"><div class="message__userAvatar"><img class="message__userAvatarImage" src="images/pig.jpg" alt="username"></div><div class="message__details"><div class="message__user"><strong class="message__userName">${json.data.message.username}</strong><span class="message__date">12-05-2019</span></div><div class="message__text"><p>${json.data.message.text}</p></div></div></div>`;
+            let message = `<div class="message"><div class="message__userAvatar"><img class="message__userAvatarImage" src="images/pig.jpg" alt="username"></div><div class="message__details"><div class="message__user"><strong class="message__userName">${json.data.message.username}</strong></div><div class="message__text"><p>${json.data.message.text}</p></div></div></div>`;
             document.querySelector(".messages").insertAdjacentHTML('afterend', message);
         }).catch(err => {
             console.log(err);
