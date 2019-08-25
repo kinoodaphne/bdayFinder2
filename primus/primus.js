@@ -1,5 +1,3 @@
-// NODE BACKEND
-
 const Primus = require('primus');
 
 let go = (server) => {
