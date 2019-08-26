@@ -2,7 +2,7 @@
 const base_url = "https://bday-finder-2.herokuapp.com",
     local_url = "http://localhost:3000";
 
-primus = Primus.connect(local_url, {
+primus = Primus.connect(base_url, {
     reconnect: {
         max: Infinity // Number: The max delay before we try to reconnect.
             ,
