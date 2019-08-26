@@ -24,19 +24,9 @@ primus.on('data', (json) => {
 /**
  * Check if user is logged in; if not => /users/login
  */
-fetch("/api/v1/chat", {
-    'headers': {
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-    }
-}).then(result => {
-    return result.json();
-}).then(json => {
-    console.log(json);
-}).catch(err => {
-    console.log("😢😢😢");
-    localStorage.removeItem("token");
+if (!localStorage.getItem('token')) {
     window.location.href = "/users/login";
-});
+}
 
 /** Fetch all messages */
 fetch(base_url + "/api/v1/chat", {
