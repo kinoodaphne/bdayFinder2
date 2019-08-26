@@ -13,21 +13,24 @@ const getAll = (req, res) => {
     });
 };
 
-let getId = (req, res, next) => {
+const getId = async (req, res) => {
+    let id = req.query._id;
+
     Message.find({
-        "username": req.user.username
+        'id': id
     }, (err, docs) => {
-        if( err){
+        if (err) {
             res.json({
                 "status": "error",
-                "message": err.message
+                "message": "Could not get messages"
             });
-        }
-        if(!err){
+        } else {
             res.json({
                 "status": "success",
-                "data": docs
-            })
+                "data": {
+                    "message": docs
+                }
+            });
         }
     });
 }
@@ -54,7 +57,7 @@ const create = (req, res, next) => {
                 }
             });
         }
-    }  );
+    });
 };
 
 module.exports.getAll = getAll;

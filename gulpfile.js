@@ -19,13 +19,13 @@ function useNodemon() {
     nodemon({
         script: './bin/www',
         ext: "pug js",
-        env: { 'NODE_ENV': 'development' }
+        env: { 'NODE_ENV': 'default' }
     });
 }
 
 function doBrowserSync() {
     browserSync.init(null, {
-        proxy: 'http://localhost:3000',
+        proxy: 'http://localhost',
         port: 3000
     });
 }

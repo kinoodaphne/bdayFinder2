@@ -75,6 +75,40 @@ input.addEventListener("keyup", e => {
     e.preventDefault();
 });
 
+let btnSubmit = document.querySelector('#submit');
+btnSubmit.addEventListener("click", e => {
+    console.log("button clicked");
+    
+    let text = input.value;
+    fetch('/api/v1/chat', {
+            method: "post",
+            'headers': {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            },
+            body: JSON.stringify({
+                "text": text
+            })
+        })
+        .then(result => {
+            return result.json();
+        }).then(json => {
+            input.value = "";
+            input.focus();
+
+            primus.write({
+                "action": "addMessage",
+                "data": json
+            });
+
+            // appendMessage(json);
+
+        }).catch(err => {
+            console.log(err);
+        })
+    e.preventDefault();
+});
+
 // simple logout functionality
 document.querySelector(".option__logout").addEventListener("click", e => {
     localStorage.removeItem("token");
