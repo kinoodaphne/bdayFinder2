@@ -1,5 +1,6 @@
 // PRIMUS LIVE
-const base_url = "https://bday-finder-2.herokuapp.com";
+const base_url = "https://bday-finder-2.herokuapp.com",
+    local_url = "http://localhost:3000";
 
 primus = Primus.connect(base_url, {
     reconnect: {
