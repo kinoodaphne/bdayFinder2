@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
+const dateOnly = require("mongoose-dateonly")(mongoose);
 
 const User = new Schema({
     birthday: {
-        type: String,
+        type: dateOnly,
         required: true
     }
 });
