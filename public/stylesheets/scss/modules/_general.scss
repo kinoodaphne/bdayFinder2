@@ -1,0 +1,50 @@
+@import "modules/variables";
+
+/* GENERAL */
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: $main-font;
+    background-color: $bg-color;
+    overflow-y: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+img {
+    border-style: none;
+}
+
+.hidden {
+    display: none;
+}
+
+button, input, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button, input {
+    overflow: visible;
+}
+
+button {
+    text-transform: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 90vh 10vh;
+}

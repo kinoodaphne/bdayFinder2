@@ -1,0 +1,99 @@
+@import "modules/variables";
+@import "modules/general";
+
+.messages-form {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+
+    input {
+        background-color: $white;
+        border: 0;
+        padding: 0.2em 0.5em;
+        outline: none;
+        width: 95%;
+        margin: 1em 0em 1em 0.5em;
+        border-radius: 15px;
+    }
+
+    input::placeholder {
+        color: $bg-color;
+    }
+
+    button {
+        background-color: $purple;
+        border: 0;
+        border-radius: 15px;
+        font-weight: bold;
+        margin: 1em 0.5em 1em 0em;
+    }
+
+    button:hover {
+        transform: none;
+    }
+}
+
+.messages-container {
+    overflow: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    padding-left: 1em;
+}
+
+.message {
+    font-size: 0.9em;
+    margin: 0.5em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: center;
+    grid-gap: 0.5em;
+    margin: 0.5em auto;
+}
+
+.message__details {
+    border-left: 3px solid $purple;
+}
+
+.message__userAvatarImage {
+    border-radius: 0.2em;
+    width: 40px;
+    height: 40px;
+}
+
+.message__user {
+    color: $purple;
+    font-size: 1em;
+    padding: 0.2em;
+    display: inline-block;
+}
+
+.message__userName {
+    font-weight: normal;
+    padding-left: 0.5em;
+}
+
+.message__date {
+    opacity: 0.5;
+    font-size: 0.9em;
+}
+
+.message__text {
+    padding: 0.5em;
+
+    p {
+        padding: 0.2em;
+        border-radius: 0.2em;
+        margin: 0;
+        color: $white;
+    }
+}
+
+.message__image {
+    width: 320px;
+    max-width: 100%;
+    display: inline-block;
+}

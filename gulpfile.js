@@ -25,8 +25,7 @@ function useNodemon() {
 
 function doBrowserSync() {
     browserSync.init(null, {
-        proxy: 'http://localhost',
-        port: 3000
+        proxy: 'http://localhost:3000'
     });
 }
 

@@ -1,0 +1,19 @@
+.logOut {
+    position: fixed;
+    right: 2em;
+    top: 1em;
+    display: grid;
+    grid-template-columns: 70px auto;
+    background-color: rgba(1, 1, 1, 0.8);
+    border-radius: 1em;
+    align-content: center;
+    align-items: center;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    z-index: 9999
+}
+
+.option__logout {
+    color: white;
+    text-decoration: none;
+}
