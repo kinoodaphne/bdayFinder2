@@ -14,9 +14,14 @@ var btnLogin = document.querySelector("#submit").addEventListener("click", (e) =
     }).then(response => {
         return response.json();
     }).then(json => {
+        console.log(json);
         if (json.status === "success") {
             let token = json.data.token;
             localStorage.setItem("token", token);
+
+            let birthday = json.data.birthday;
+            localStorage.setItem("birthday", birthday);
+
             window.location.href = "/";
         } else {
             let feedback = document.querySelector(".feedback");

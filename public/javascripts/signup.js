@@ -3,7 +3,7 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
     let password = document.querySelector('#password').value;
     let birthday = document.querySelector('#birthday').value;
 
-     fetch('/users/signup', {
+    fetch('/users/signup', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'
@@ -16,6 +16,7 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
     }).then(response => {
         return response.json();
     }).then(json => {
+        console.log(json);
         if (json.status === "success") {
             let feedback = document.querySelector(".feedback");
             feedback.textContent = "Sign up complete! You can login now";
@@ -23,6 +24,7 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
 
             let token = json.data.token;
             localStorage.setItem("token", token);
+
             window.location.href = "/";
         } else {
             let feedback = document.querySelector(".feedback");
@@ -30,4 +32,4 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
             feedback.classList.remove('hidden');
         }
     })
-}); 
+});
