@@ -24,6 +24,8 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
             let token = json.data.token;
             localStorage.setItem("token", token);
 
+            let birthdayToken = json.data.birthday;
+            localStorage.setItem('birthday', birthdayToken.toString().substr(4));
             window.location.href = "/";
         } else {
             let feedback = document.querySelector(".feedback");

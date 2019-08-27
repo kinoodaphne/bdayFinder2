@@ -1,16 +1,38 @@
 const Message = require('../../../models/Message');
 
-const getAll = (req, res) => {
-    Message.find({}, (err, docs) => {
-        if (!err) {
-            res.json({
-                "status": "success",
-                "data": {
-                    "chat": docs
-                }
-            });
-        }
-    });
+const cutBday = (headers) => {
+
+    const { authorization } = headers;
+        var stringy = "bearer "; 
+        var token = authorization.slice(stringy.length, authorization.length);
+
+        const {birthday, uid,username} = jwt.decode(token);
+        let birthdayCut = birthday.toString().substr(4);
+
+        return {birthdayCut, uid,username};
+
+}
+
+const getAll = async(req, res) => {
+try{
+        const {birthdayCut} = cutBday(req.headers);
+
+        const result = await Message.find({birthday:birthdayCut}).exec();
+
+
+        res.json({
+            "status": "succes" ,
+            "data" : {
+                "chat": result
+            }
+        });
+    }catch(ex){
+        res.json({
+            "status": "failed" ,
+            "data" : {
+                "message": "something went wrong"
+            }});
+    }
 };
 
 const getId = async (req, res) => {
@@ -38,7 +60,10 @@ const getId = async (req, res) => {
 const create = (req, res, next) => {
     let message = new Message();
     message.text = req.body.text;
-    message.username = req.user.username;
+    
+        const {birthday, username} = cutBday(req.headers);
+        message.username = username;
+        message.birthday = birthday;
 
     message.save((err, doc) => {
         if (err) {
