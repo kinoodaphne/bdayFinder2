@@ -5,6 +5,7 @@ const {
     parallel
 } = require('gulp');
 const sass = require('gulp-sass');
+
 const browserSync = require('browser-sync').create();
 const nodemon = require('gulp-nodemon');
 
@@ -25,7 +26,7 @@ function useNodemon() {
 
 function doBrowserSync() {
     browserSync.init(null, {
-        proxy: 'http://localhost',
+        proxy: 'http://localhost:3000',
         port: 3000
     });
 }

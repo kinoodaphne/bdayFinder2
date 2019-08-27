@@ -4,10 +4,8 @@ const base_url = "https://bday-finder-2.herokuapp.com",
 
 primus = Primus.connect(base_url, {
     reconnect: {
-        max: Infinity // Number: The max delay before we try to reconnect.
-            ,
-        min: 500 // Number: The minimum delay before we try reconnect.
-            ,
+        max: Infinity, // Number: The max delay before we try to reconnect.
+        min: 500, // Number: The minimum delay before we try reconnect.
         retries: 10 // Number: How many times we should try to reconnect.
     }
 });
@@ -38,7 +36,7 @@ fetch(base_url + "/api/v1/chat", {
 
 }).then(json => {
     json.data.chat.forEach(message => {
-        let newMessage = `<div class="message"><div class="message__userAvatar"><img class="message__userAvatarImage" src="images/pig.jpg" alt="username"></div><div class="message__details"><div class="message__user"><strong class="message__userName">${message.username}</strong></div><div class="message__text"><p>${message.text}</p></div></div></div>`;
+        const newMessage = `<div class="message"><div class="message__userAvatar"><img class="message__userAvatarImage" src="images/pig.jpg" alt="username"></div><div class="message__details"><div class="message__user"><strong class="message__userName">${message.username}</strong></div><div class="message__text"><p>${message.text}</p></div></div></div>`;
         document.querySelector(".messages").insertAdjacentHTML('afterend', newMessage);
     });
 
@@ -48,16 +46,16 @@ fetch(base_url + "/api/v1/chat", {
 });
 
 // Append message to chat
-let appendMessage = (json) => {
-    let message = `<div class="message"><div class="message__userAvatar"><img class="message__userAvatarImage" src="images/pig.jpg" alt="username"></div><div class="message__details"><div class="message__user"><strong class="message__userName">${json.data.message.username}</strong></div><div class="message__text"><p>${json.data.message.text}</p></div></div></div>`;
+const appendMessage = (json) => {
+    const message = `<div class="message"><div class="message__userAvatar"><img class="message__userAvatarImage" src="images/pig.jpg" alt="username"></div><div class="message__details"><div class="message__user"><strong class="message__userName">${json.data.message.username}</strong></div><div class="message__text"><p>${json.data.message.text}</p></div></div></div>`;
     document.querySelector(".messages").insertAdjacentHTML('afterend', message);
 }
 
 // Add a message on enter key
-let input = document.querySelector(".message__input");
+const input = document.querySelector(".message__input");
 input.addEventListener("keyup", e => {
     if (e.keyCode === 13) {
-        let text = input.value;
+        const text = input.value;
         fetch('/api/v1/chat', {
                 method: "post",
                 'headers': {
@@ -87,18 +85,18 @@ input.addEventListener("keyup", e => {
 
             }).catch(err => {
                 console.log(err);
-            })
+            });
     }
 
     e.preventDefault();
 });
 
 // Add a message on click button submit
-let btnSubmit = document.querySelector('#submit');
+const btnSubmit = document.querySelector('#submit');
 btnSubmit.addEventListener("click", e => {
     console.log("button clicked");
 
-    let text = input.value;
+    const text = input.value;
     fetch('/api/v1/chat', {
             method: "post",
             'headers': {
@@ -128,7 +126,7 @@ btnSubmit.addEventListener("click", e => {
 
         }).catch(err => {
             console.log(err);
-        })
+        });
     e.preventDefault();
 });
 
