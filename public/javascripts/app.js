@@ -135,6 +135,7 @@ btnSubmit.addEventListener("click", e => {
 // When clicked on button logout
 document.querySelector(".option__logout").addEventListener("click", e => {
     localStorage.removeItem("token");
+    localStorage.removeItem("birthday");
     window.location.href = "/users/login";
     e.preventDefault();
 });

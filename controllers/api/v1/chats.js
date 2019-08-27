@@ -38,7 +38,6 @@ const getId = async (req, res) => {
 const create = (req, res, next) => {
     let message = new Message();
     message.text = req.body.text;
-    console.log(req.user);
     message.username = req.user.username;
 
     message.save((err, doc) => {

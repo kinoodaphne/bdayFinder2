@@ -19,9 +19,6 @@ var btnLogin = document.querySelector("#submit").addEventListener("click", (e) =
             let token = json.data.token;
             localStorage.setItem("token", token);
 
-            let birthday = json.data.birthday;
-            localStorage.setItem("birthday", birthday);
-
             window.location.href = "/";
         } else {
             let feedback = document.querySelector(".feedback");

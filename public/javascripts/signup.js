@@ -16,7 +16,6 @@ var btnSignup = document.querySelector("#submit").addEventListener("click", (e) 
     }).then(response => {
         return response.json();
     }).then(json => {
-        console.log(json);
         if (json.status === "success") {
             let feedback = document.querySelector(".feedback");
             feedback.textContent = "Sign up complete! You can login now";
