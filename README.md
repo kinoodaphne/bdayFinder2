@@ -1,5 +1,8 @@
-# bdayFinder2
+# bdayFinder-github (versie 1)
+[link naar eerste project](https://github.com/kinoodaphne/Bday-finder)
 
-Started working on the app bdayFinder in a first version. Turned out that this had so much bugs in it that it was better to start from scratch.
+# bdayFinder2-github (versie 2)
+[link naar finale project](https://github.com/kinoodaphne/bdayFinder2)
 
-You can find the correct version of the app here.
+# Herokuapp
+[link naar Nodes app codepen](https://bday-finder-2.herokuapp.com)
